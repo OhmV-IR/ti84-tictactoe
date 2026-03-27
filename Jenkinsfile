@@ -1,7 +1,7 @@
 pipeline {
     agent none
     tools {
-	cedev 'cedev'
+	customTool 'cedev'
     }
 
     stages {
@@ -21,7 +21,7 @@ pipeline {
                         }
 			stage("archive"){
 				steps {
-					archiveArtifacts 'bin/**', fingerprint: true
+					archiveArtifacts artifacts: 'bin/**', fingerprint: true
 				}
 			}
                     }
@@ -40,7 +40,7 @@ pipeline {
                         }
 			stage("archive"){
 				steps {
-					archiveArtifacts 'bin/**', fingerprint: true
+					archiveArtifacts artifacts: 'bin/**', fingerprint: true
 				}
 			}
                     }
