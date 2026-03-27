@@ -49,8 +49,14 @@ pipeline {
 
                         stage("Fetch CEdev") {
                             steps {
-                                sh "[ -d CEdev ] && rm -rf CEdev"
-                                sh "[ -f CEdev-Linux.tar.gz ] && rm CEdev-Linux.tar.gz"
+                                sh  """
+					if [ -d CEdev ]; then
+						rm -rf CEdev
+					fi
+					if [ -f CEdev-Linux.tar.gz ]; then
+						rm CEdev-Linux.tar.gz
+					fi
+				"""
                                 sh "curl -L -O https://github.com/CE-Programming/toolchain/releases/download/v14.2/CEdev-Linux.tar.gz"
                                 sh "tar -xzvf CEdev-Linux.tar.gz"
                             }
