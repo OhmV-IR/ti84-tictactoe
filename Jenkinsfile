@@ -1,7 +1,7 @@
 pipeline {
     agent none
     tools {
-	com.cloudbees.jenkins.plugins.customtools.CustomTool 'cedev'
+	com.cloudbees.jenkins.plugins.customtools.CustomTool name: 'cedev'
     }
 
     stages {
