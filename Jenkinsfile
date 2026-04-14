@@ -18,7 +18,7 @@ pipeline {
                                 bat "if exist CEdev rmdir /s /q CEdev"
                                 bat "if exist CEdev-Windows.zip del CEdev-Windows.zip"
                                 bat "curl -L -O https://github.com/CE-Programming/toolchain/releases/download/v14.2/CEdev-Windows.zip"
-                                pwsh "Expand-Archive -Path CEdev-Windows.zip -DestinationPath CEdev"
+                                powershell "Expand-Archive -Path CEdev-Windows.zip -DestinationPath CEdev"
                             }
                         }
 
